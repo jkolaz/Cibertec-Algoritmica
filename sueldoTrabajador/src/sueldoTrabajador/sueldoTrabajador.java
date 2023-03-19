@@ -203,8 +203,8 @@ public class sueldoTrabajador {
 		
 		DecimalFormat formatter = new DecimalFormat( "#.##", symbols );
 		
-		String calculateTemp = formatter.format(calculate);
-		return "S/" + calculateTemp;
+		String calculateTemp = formatter.format( Math.round( calculate * 100 )/100 );
+		return "S/" + String.format("%.2f", calculate);
 	}
 
 }
