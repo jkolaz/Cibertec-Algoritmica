@@ -9,8 +9,6 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.awt.event.ActionEvent;
 
 public class sueldoTrabajador {
@@ -87,11 +85,11 @@ public class sueldoTrabajador {
 		lblResultGrossSalary.setBounds(50, 360, 160, 30);
 		frame.getContentPane().add(lblResultGrossSalary);
 		
-		JLabel lblResultDiscount = new JLabel("Descuento");
+		JLabel lblResultDiscount = new JLabel("Descuento:");
 		lblResultDiscount.setBounds(50, 400, 160, 30);
 		frame.getContentPane().add(lblResultDiscount);
 		
-		JLabel lblNetIncome = new JLabel("Sueldo Neto ");
+		JLabel lblNetIncome = new JLabel("Sueldo Neto:");
 		lblNetIncome.setBounds(50, 440, 160, 30);
 		frame.getContentPane().add(lblNetIncome);
 		
@@ -198,12 +196,6 @@ public class sueldoTrabajador {
 	}
 	
 	private static String labelResult( double calculate ) {
-		DecimalFormatSymbols symbols = new DecimalFormatSymbols();
-		symbols.setDecimalSeparator( '.' );
-		
-		DecimalFormat formatter = new DecimalFormat( "#.##", symbols );
-		
-		String calculateTemp = formatter.format( Math.round( calculate * 100 )/100 );
 		return "S/" + String.format("%.2f", calculate);
 	}
 
